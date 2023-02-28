@@ -2,7 +2,7 @@
 
 
 ## Description
-This is showing off the backend of a social network using APIs, express, and Mongoose.
+This is showing off the backend of a social network using APIs, express, and MongoDB.
 
 ---
 
