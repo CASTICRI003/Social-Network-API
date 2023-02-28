@@ -94,3 +94,22 @@ const userName = [
     'Poker',
     'Deliveries',
   ];
+
+  const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+  const getRandomUser = () => 
+  `${getRandomArrItem(userName)} ${getRandomArrItem(userName)}`;
+
+  const getRandomThoughts = (int) => {
+    const results = [];
+    for (let i = 0; i < int; i++) {
+        results.push({
+            assignmentName: getRandomArrItem(userThoughts),
+            score: Math.floor(Math.random() * (99 - 70 + 1) + 70),
+        });
+    }
+    return results;
+  };
+
+
+  module.exports = { getRandomUser, getRandomThoughts };
