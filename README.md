@@ -22,7 +22,8 @@ This is showing off the backend of a social network using APIs, express, and Mon
 ---
 ## Screen Capture
 
----
+[Video to how it works](https://user-images.githubusercontent.com/113932598/222003590-5d574e42-f512-444b-a1b5-5bd34a9fd0f4.webm)
+
 
 ---
 
