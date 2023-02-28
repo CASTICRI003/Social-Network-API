@@ -7,11 +7,11 @@ connection.on('error', (err) => err);
 connection.once('open', async () => {
     console.log('Connected');
 
-    await Course.deleteMany({});
+    await Thought.deleteMany({});
 
-    await Student.deleteMany({});
+    await User.deleteMany({});
 
-    const students = [];
+    const users = [];
 
     for (let i = 0; i < 20; i++) {
         const assignments = getRandomThoughts(20);
@@ -19,9 +19,9 @@ connection.once('open', async () => {
         const fullName = getRandomUser();
         const firstName = fullName.split(' ')[0];
         const lastName = fullName.split(' ')[1];
-        const github = `${first}${Math.floor(Math.random() * (99 - 18 + 1) + 18)}`;
+        const github = `${firstName}${Math.floor(Math.random() * (99 - 18 + 1) + 18)}`;
 
-        students.push({
+        users.push({
             firstName,
             lastName,
             github,
@@ -29,15 +29,15 @@ connection.once('open', async () => {
         });
     }
 
-    await Student.collection.insertMany(students);
+    await User.collection.insertMany(users);
 
-    await Course.collection.insertOne({
-        courseName: 'Oingo Boingo',
+    await Thought.collection.insertOne({
+        thought: 'Oingo Boingo',
         inPerson: false,
-        students: [...students],
+        users: [...users],
     });
 
-    console.table(students);
+    console.table(users);
     console.info('Seeding complete!');
     process.exit(0);
 });
